@@ -35,7 +35,7 @@ class LinkedList:
         self.count = 0
         return "flushed"
     
-    def find(self ,item):
+    def find_iterative(self ,item):  #####iterative method
         all_ele = self.head
         index = 0
         while all_ele.getNext() != None:
@@ -45,6 +45,19 @@ class LinkedList:
             all_ele = all_ele.next
             index +=1
         return "item not present"
+        
+    def find_res(self,node , item):   #########recursive method
+        if node.getItem() == item:
+            return "found"
+        return self.find_res(node.getNext() , item)
+
+    def find_mid_element(self):
+        mid = self.count //2
+        temp = self.head
+        while mid != 0 :
+            temp = temp.getNext()
+            mid -=1
+        return temp.getItem()
 
 x = LinkedList()
 for i in range(40):
