@@ -20,6 +20,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
         self.count +=1
+
     def display(self):
         all_ele = self.head
         while all_ele.getNext() != None:
@@ -28,18 +29,21 @@ class LinkedList:
             
     def is_empty(self):
         return self.head == None
-        
+
     def del_all(self):
         self.head = None
+        self.count = 0
         return "flushed"
     
     def find(self ,item):
         all_ele = self.head
+        index = 0
         while all_ele.getNext() != None:
             if all_ele.getItem() == item:
-                return "item present "
+                return "item present in {} index in queue".format(index)
             
             all_ele = all_ele.next
+            index +=1
         return "item not present"
 
 x = LinkedList()
