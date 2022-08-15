@@ -45,7 +45,7 @@ class LinkedList:
             all_ele = all_ele.next
             index +=1
         return "item not present"
-        
+
     def find_res(self,node , item):   #########recursive method
         if node.getItem() == item:
             return "found"
@@ -64,3 +64,5 @@ for i in range(40):
     x.insert(i)
 
 x.display()
+print("count" , x.lenght() , "===>",x.find_iterative(1) ,"====>", x.is_empty(),"===>" , x.find_mid_element(),"====>" , x.find_res(x.head , 8) )
+
